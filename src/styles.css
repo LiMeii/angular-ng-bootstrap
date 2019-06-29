@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+
+.panel-cover {
+    background-image: url('./assets/images/background-cover.jpg');;
+    background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    color: #fff;
+    height: calc(100vh);
+}
+
+.cover-shadow {
+background-color: rgba(66, 68, 64, 0.7);
+display: block;
+position: absolute;
+z-index: 0;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+}
+
+.carousel-item img {
+width:100%;
+}
