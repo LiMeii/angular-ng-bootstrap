@@ -1,10 +1,19 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+
+import { MessageService } from "../../share/service/message.service";
+
 
 @Component({
-    selector:"app-home",
+    selector: "app-home",
     templateUrl: "./home.component.html"
 })
 
-export class HomeComponent {
-    images = [1, 2, 3].map(() => `https://picsum.photos/900/500?random&t=${Math.random()}`);
+export class HomeComponent implements OnInit {
+
+    constructor(private messageService: MessageService) { }
+
+    ngOnInit() {
+        this.messageService.sendNavigationID({ key: 1, ref: "carousel" });
+    }
+
 }
