@@ -22,7 +22,7 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
 
     ngAfterViewInit() {
         this.subscription = this.messageService.currentNavigation.subscribe(data => {
-            data && data.ref && data.ref === "carousel" ? this.carousel.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' }) : "";
+            this.carousel && data && data.ref && data.ref === "carousel" ? this.carousel.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' }) : "";
         });
     }
 

@@ -18,7 +18,7 @@ export class ContactInfoComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.subscription = this.messageService.currentNavigation.subscribe(data => {
-            data && data.ref && data.ref === "contactInfo" ? this.contactInfo.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' }) : "";
+            this.contactInfo && data && data.ref && data.ref === "contactInfo" ? this.contactInfo.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' }) : "";
         });
     }
 

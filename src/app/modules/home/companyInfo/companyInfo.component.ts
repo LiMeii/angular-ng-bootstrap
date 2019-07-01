@@ -17,7 +17,7 @@ export class CompanyInfoComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.subscription = this.messageService.currentNavigation.subscribe(data => {
-            data && data.ref && data.ref === "companyInfo" ? this.companyInfo.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' }) : "";
+            this.companyInfo && data && data.ref && data.ref === "companyInfo" ? this.companyInfo.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' }) : "";
         });
     }
 

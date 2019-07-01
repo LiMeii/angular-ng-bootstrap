@@ -13,7 +13,13 @@ export class NavbarComponent {
     isNavbarCollapsed = true;
     navItems = navItems;
 
-    constructor(private messageService: MessageService) { }
+    constructor(
+        private messageService: MessageService
+    ) { }
+
+    onGoTOHomePage() {
+        this.messageService.navigationChange({ key: 1, ref: "carousel" });
+    }
 
     onNavigate(key: any, ref: any) {
         let item = { key: key, ref: ref };

@@ -17,7 +17,7 @@ export class TeamComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.subscription = this.messageService.currentNavigation.subscribe(data => {
-            data && data.ref && data.ref === "team" ? this.team.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' }) : "";
+            this.team && data && data.ref && data.ref === "team" ? this.team.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' }) : "";
         });
     }
 

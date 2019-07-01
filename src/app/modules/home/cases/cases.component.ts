@@ -17,7 +17,7 @@ export class CasesComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.subscription = this.messageService.currentNavigation.subscribe(data => {
-            data && data.ref && data.ref === "cases" ? this.cases.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' }) : "";
+            this.cases && data && data.ref && data.ref === "cases" ? this.cases.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' }) : "";
         });
     }
 
