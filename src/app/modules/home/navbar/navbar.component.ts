@@ -17,7 +17,7 @@ export class NavbarComponent {
         private messageService: MessageService
     ) { }
 
-    onGoTOHomePage() {
+    onGoToHomePage() {
         this.messageService.navigationChange({ key: 1, ref: "carousel" });
     }
 
