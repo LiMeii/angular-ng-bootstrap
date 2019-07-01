@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from "@angular/core";
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewInit } from "@angular/core";
 import { Subscription } from "rxjs";
 
 import { MessageService } from "../../../share/service/message.service";
@@ -9,7 +9,7 @@ import { MessageService } from "../../../share/service/message.service";
 
 })
 
-export class CarouselComponent implements OnInit, OnDestroy {
+export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
     @ViewChild('carousel', { static: false }) public carousel: ElementRef;
     subscription: Subscription;
 
@@ -18,8 +18,11 @@ export class CarouselComponent implements OnInit, OnDestroy {
     constructor(private messageService: MessageService) { }
 
     ngOnInit() {
-        this.subscription = this.messageService.getNavigationID().subscribe(data => {
-            data && data.ref && data.ref === "carousel" ? this.carousel.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'start' }) : "";
+    }
+
+    ngAfterViewInit() {
+        this.subscription = this.messageService.currentNavigation.subscribe(data => {
+            data && data.ref && data.ref === "carousel" ? this.carousel.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' }) : "";
         });
     }
 

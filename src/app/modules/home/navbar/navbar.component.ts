@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 
-import { MessageService } from "../service/message.service";
-import { navItems } from "../constants/app-constants";
+import { MessageService } from "../../../share/service/message.service";
+import { navItems } from "../../../share/constants/app-constants";
 
 @Component({
     selector: "app-navbar",
@@ -17,6 +17,6 @@ export class NavbarComponent {
 
     onNavigate(key: any, ref: any) {
         let item = { key: key, ref: ref };
-        this.messageService.sendNavigationID(item);
+        this.messageService.navigationChange(item);
     }
 }

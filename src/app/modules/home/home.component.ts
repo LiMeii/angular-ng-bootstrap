@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
     constructor(private messageService: MessageService) { }
 
     ngOnInit() {
-        this.messageService.sendNavigationID({ key: 1, ref: "carousel" });
+        this.messageService.navigationChange({ key: 1, ref: "carousel" });
     }
 
 }
