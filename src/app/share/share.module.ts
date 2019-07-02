@@ -2,7 +2,8 @@ import { NgModule } from "@angular/core";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { CommonModule } from "@angular/common";
 
-import { MessageService } from "./service/message.service";
+import { NavbarComponent } from "./navbar/navbar.component";
+import { FooterComponent } from "./footer/footer.component";
 
 
 @NgModule({
@@ -11,12 +12,16 @@ import { MessageService } from "./service/message.service";
         CommonModule
     ],
     declarations: [
+        NavbarComponent,
+        FooterComponent
 
     ],
     providers: [
-        MessageService
+
     ],
     exports: [
+        NavbarComponent,
+        FooterComponent
     ]
 })
 

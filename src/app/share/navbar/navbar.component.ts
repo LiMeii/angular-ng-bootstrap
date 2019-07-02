@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 
-import { MessageService } from "../../../share/service/message.service";
-import { navItems } from "../../../share/constants/app-constants";
+import { MessageService } from "../service/message.service";
+import { navItems } from "../constants/app-constants";
 
 @Component({
     selector: "app-navbar",

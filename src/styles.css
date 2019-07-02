@@ -48,6 +48,10 @@
     display:inline-block;
 }
 
+.navbar li a{
+    cursor: pointer;
+}
+
 .navbar li a:hover {
     font-size: 17px;
     color:rgba(179, 172, 172) !important;
